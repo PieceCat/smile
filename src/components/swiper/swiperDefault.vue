@@ -19,13 +19,17 @@
                 swiperOption:{
                     direction:'vertical',
                     pagination:{
-                        el:'.swiper-pagination'
+                        el:'.swiper-pagination',
+                        clickable: true
                     },
 
                 }
             }
         },
-        components:{swiper,swiperSlide}
+        components:{
+            swiper,
+            swiperSlide
+        }
     }
 </script>
 

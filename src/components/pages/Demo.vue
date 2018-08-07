@@ -14,7 +14,7 @@
             }
         },
         // components:{swiper, swiperSlide, swiperDefault}
-        components:{swiper, swiperSlide, swiperDefault2}
+        // components:{swiper, swiperSlide, swiperDefault2}
     }
 </script>
 

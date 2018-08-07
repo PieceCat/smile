@@ -50,6 +50,22 @@
                 </swiper>
             </div>
         </div>
+        <!--floor one area-->
+        <div class="floor">
+            <div class="floor-anomaly">
+                <div class="floor-one">
+                    <img :src="floor1_0.image" width="100%" />
+                </div>
+                <div>
+                    <div class="floor-two">
+                        <img :src="floor1_1.image" width="100%" />
+                    </div>
+                    <div>
+                        <img :src="floor1_2.image" width="100%" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
    
@@ -71,6 +87,10 @@
                 category:[],
                 adBanner:'',
                 recommendGoods:[],
+                floor1:[],
+                floor1_0:[],
+                floor1_1:[],
+                floor1_2:[]
             }
         },
         created() {
@@ -85,6 +105,13 @@
                     this.category = response.data.data.category
                     this.adBanner = response.data.data.advertesPicture
                     this.recommendGoods = response.data.data.recommend
+                    this.floor1 = response.data.data.floor1            
+                    this.floor1_0 =this.floor1[0]
+                    this.floor1_1 =this.floor1[1]
+                    this.floor1_2 =this.floor1[2]
+                    // this.floor2 = response.data.data.floor2
+                    // this.floor3 = response.data.data.floor3
+                    // this.floorName = response.data.data.floorName
                 }
             })
             .catch((error)=>{
@@ -155,5 +182,24 @@
     .recommend-price{
         color: #e5017d;
         font-size: 14px;
+    }
+    .floor-anomaly{
+      display: flex;
+      flex-direction:row;
+      background-color: #fff;
+      border-bottom:1px solid #ddd;
+    }
+    .floor-anomaly div{
+        width:10rem;
+    
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    .floor-one{
+        border-right:1px solid #ddd;
+    
+    }
+    .floor-two{
+        border-bottom:1px solid #ddd;
     }
 </style>

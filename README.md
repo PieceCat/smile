@@ -16,12 +16,16 @@
 8. 初始化项目  vue init webpack
 9. 输入 npm run dev ,在浏览器打开localhost:8080
 
-    **有时浏览器版本或者浏览器本事问题，打开后会出现sources 中import Vue from "vue"处报错，后续的一些基于vue的组件无法显示效果，建议更换浏览器或者升级浏览器**
+    **有时浏览器版本或者浏览器本身问题，打开后会出现sources 中import Vue from "vue"处报错，后续的一些基于vue的组件无法显示效果，建议更换浏览器或者升级浏览器**
 
 ##  安装vant
-### vant介绍（此处为复制）：
+### vant介绍（https://youzan.github.io/vant/#/zh-CN/intro）：
 1. 国人制造，复合中国网站样式和交互习惯；
 2. 单元测试超过90%，有些个人的小样式组件是不作单元测试的；
 3. 支持babel-plugin-import引入，按需加载插件，无需单独引入样式；
-4. 支持TypeScript，这个是2018年前端最应该学的技术；
+4. 支持TypeScript，JavaScript的超集；
 5. 支持SSR，服务端渲染也是可以使用这个组件库的；
+
+### vant安装
+1. npm i vant -S 或者 npm i vant --save
+2. 引入vant有两种方式

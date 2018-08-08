@@ -5,8 +5,8 @@
 
 ### git操作
 1. 打开git  mkdir vue（项目名称）
-2. git config -global user.name xxx
-3. git config -global user.email xxx@xx.com
+2. git config --global user.name xxx
+3. git config --global user.email xxx@xx.com
 4. git init
 
 ## vue-cli配置

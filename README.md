@@ -5,16 +5,16 @@
 
 ### git操作
 1. 打开git  mkdir vue（项目名称）
-2. git config --global user.name xxx
-3. git config --global user.email xxx@xx.com
-4. git init
+2. `git config --global user.name xxx`
+3. `git config --global user.email xxx@xx.com`
+4. `git init`
 
 ## vue-cli配置
 5. 打开vscode  ctrl + ~  打开控制台
-6. 先检查npm版本，推荐5.x以上版本  npm -v
-7. 全局安装vue-cli  npm install vue-cli -g
-8. 初始化项目  vue init webpack
-9. 输入 npm run dev ,在浏览器打开localhost:8080
+6. 先检查npm版本，推荐5.x以上版本  `npm -v`
+7. 全局安装vue-cli  `npm install vue-cli -g`
+8. 初始化项目  `vue init webpack`
+9. 输入 `npm run dev` ,在浏览器打开localhost:8080
 
     **有时浏览器版本或者浏览器本身问题，打开后会出现sources 中import Vue from "vue"处报错，后续的一些基于vue的组件无法显示效果，建议更换浏览器或者升级浏览器**
 
@@ -27,20 +27,20 @@
 5. 支持SSR，服务端渲染也是可以使用这个组件库的；
 
 ### vant安装
-1. npm i vant -S 或者 npm i vant --save
+1. `npm i vant -S` 或者 `npm i vant --save`
 2. 引入vant有两种方式
 
     1.全局引入（会增加项目打包时的大小）
 
-        - import Vant from 'vant'
+        - `import Vant from 'vant'`
 
-        - import 'vant/lib/vant-css/index.css'
+        - `import 'vant/lib/vant-css/index.css'`
 
-        - Vue.use(Vant)
+        - `Vue.use(Vant)`
 
     2.使用 babel-plugin-import 引入
 
-        - npm install babel-plugin-import -D 或者 npm install babel-plugin-import --save-dev  
+        - `npm install babel-plugin-import -D` 或者 `npm install babel-plugin-import --save-dev` 
 
         - 在 .babelrc中配置plugins
 
@@ -48,10 +48,13 @@
 
         - 在src/main.js中按需引入vant组件
 
-            - import { Button } from 'vant'
-            - Vue.use(Button)
-            - <van-button type="primary">主要按钮</van-button>
-         
+            1 import { Button } from 'vant'
+            2 Vue.use(Button)
+            3 <van-button type="primary">主要按钮</van-button>
+
+### 布局适配
+1.在index.html中加入一下代码
+let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth //
 
 
 

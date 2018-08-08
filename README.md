@@ -32,8 +32,20 @@
 
     1.全局引入（会增加项目打包时的大小）
 
-     import Vant from 'vant'
+        - import Vant from 'vant'
 
-     import 'vant/lib/vant-css/index.css'
-     
-     Vue.use(Vant)
+        - import 'vant/lib/vant-css/index.css'
+
+        - Vue.use(Vant)
+
+    2.使用 babel-plugin-import 引入
+
+        - npm install babel-plugin-import -D 或者 npm install babel-plugin-import --save-dev  
+
+        - 在 .babelrc中配置plugins
+
+        - "plugins":["transform-vue-jsx", "transform-runtime",["import",{"libraryName":"vant","style":true}]]
+
+
+
+

@@ -46,6 +46,13 @@
 
         - "plugins":["transform-vue-jsx", "transform-runtime",["import",{"libraryName":"vant","style":true}]]
 
+        - 在src/main.js中按需引入vant组件
+
+            - import { Button } from 'vant'
+            - Vue.use(Button)
+            - <van-button type="primary">主要按钮</van-button>
+         
+
 
 
 

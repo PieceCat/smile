@@ -5,16 +5,16 @@
 
 ### git操作
 1. 打开git  mkdir vue（项目名称）
-    2. git config -global user.name xxx
-    3. git config -global user.email xxx@xx.com
-    4. git init
+2. git config -global user.name xxx
+3. git config -global user.email xxx@xx.com
+4. git init
 
 ## vue-cli配置
 5. 打开vscode  ctrl + ~  打开控制台
-    6. 先检查npm版本，推荐5.x以上版本  npm -v
-    7. 全局安装vue-cli  npm install vue-cli -g
-    8. 初始化项目  vue init webpack
-    9. 输入 npm run dev ,在浏览器打开localhost:8080
+6. 先检查npm版本，推荐5.x以上版本  npm -v
+7. 全局安装vue-cli  npm install vue-cli -g
+8. 初始化项目  vue init webpack
+9. 输入 npm run dev ,在浏览器打开localhost:8080
 
     **有时浏览器版本或者浏览器本事问题，打开后会出现sources 中import Vue from "vue"处报错，后续的一些基于vue的组件无法显示效果，建议更换浏览器或者升级浏览器**
 

@@ -29,3 +29,9 @@
 ### vant安装
 1. npm i vant -S 或者 npm i vant --save
 2. 引入vant有两种方式
+
+
+    1.全局引入（会增加项目打包时的大小）
+     import Vant from 'vant'
+     import 'vant/lib/vant-css/index.css'
+     Vue.use(Vant)

@@ -51,21 +51,9 @@
             </div>
         </div>
         <!--floor one area-->
-        <div class="floor">
-            <div class="floor-anomaly">
-                <div class="floor-one">
-                    <img :src="floor1_0.image" width="100%" />
-                </div>
-                <div>
-                    <div class="floor-two">
-                        <img :src="floor1_1.image" width="100%" />
-                    </div>
-                    <div>
-                        <img :src="floor1_2.image" width="100%" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <floor-component :floorData="floor1" :floorTitle="floorName.floor1"></floor-component>
+        <floor-component :floorData="floor2" :floorTitle="floorName.floor2"></floor-component>
+        <floor-component :floorData="floor3" :floorTitle="floorName.floor3"></floor-component>
     </div>
 </template>
    
@@ -76,6 +64,7 @@
     import axios from 'axios'
     import 'swiper/dist/css/swiper.css'
     import {swiper , swiperSlide} from 'vue-awesome-swiper'
+    import floorComponent from '../component/floorComponent'
     export default {
         data() {
             return {
@@ -88,11 +77,12 @@
                 adBanner:'',
                 recommendGoods:[],
                 floor1:[],
-                floor1_0:[],
-                floor1_1:[],
-                floor1_2:[]
+                floor2:[],
+                floor3:[],
+                floorName:{},
             }
         },
+        components:{swiper,swiperSlide,floorComponent},
         created() {
             axios({
                 url:'https://www.easy-mock.com/mock/5b693c0d8733b43c01e267dc/example/SmileVue',
@@ -105,13 +95,10 @@
                     this.category = response.data.data.category
                     this.adBanner = response.data.data.advertesPicture
                     this.recommendGoods = response.data.data.recommend
-                    this.floor1 = response.data.data.floor1            
-                    this.floor1_0 =this.floor1[0]
-                    this.floor1_1 =this.floor1[1]
-                    this.floor1_2 =this.floor1[2]
-                    // this.floor2 = response.data.data.floor2
-                    // this.floor3 = response.data.data.floor3
-                    // this.floorName = response.data.data.floorName
+                    this.floor1 = response.data.data.floor1;
+                    this.floor2 = response.data.data.floor2;
+                    this.floor3 = response.data.data.floor3;
+                    this.floorName = response.data.data.floorName;
                 }
             })
             .catch((error)=>{
@@ -201,5 +188,20 @@
     }
     .floor-two{
         border-bottom:1px solid #ddd;
+    }
+    .floor-rule{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      background-color: #fff;
+    }
+    .floor-rule div{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width:10rem;
+        border-bottom:1px solid #ddd;
+    }
+    .floor-rule div:nth-child(odd){
+        border-right: 1px solid #ddd;
     }
 </style>

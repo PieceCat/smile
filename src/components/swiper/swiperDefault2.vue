@@ -29,7 +29,7 @@
                 }
             }
         },
-        components:{swiper,swiperSlide}
+        components:{ swiper,swiperSlide }
     }
 </script>
 

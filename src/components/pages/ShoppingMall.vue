@@ -54,6 +54,19 @@
         <floor-component :floorData="floor1" :floorTitle="floorName.floor1"></floor-component>
         <floor-component :floorData="floor2" :floorTitle="floorName.floor2"></floor-component>
         <floor-component :floorData="floor3" :floorTitle="floorName.floor3"></floor-component>
+        <!--Hot Area-->
+        <div class="hot-area">
+            <div class="hot-title">热卖商品</div>
+            <div class="hot-goods">
+                <van-list>
+                    <van-row gutter="20">
+                        <van-col span="12" v-for="(item, index) in hotGoods" :key="index">
+                            <div>{{item.name}}</div>
+                        </van-col>
+                    </van-row>
+                </van-list>
+            </div>
+        </div>
     </div>
 </template>
    
@@ -80,6 +93,7 @@
                 floor2:[],
                 floor3:[],
                 floorName:{},
+                hotGoods:[]
             }
         },
         components:{swiper,swiperSlide,floorComponent},
@@ -95,10 +109,11 @@
                     this.category = response.data.data.category
                     this.adBanner = response.data.data.advertesPicture
                     this.recommendGoods = response.data.data.recommend
-                    this.floor1 = response.data.data.floor1;
-                    this.floor2 = response.data.data.floor2;
-                    this.floor3 = response.data.data.floor3;
-                    this.floorName = response.data.data.floorName;
+                    this.floor1 = response.data.data.floor1
+                    this.floor2 = response.data.data.floor2
+                    this.floor3 = response.data.data.floor3
+                    this.floorName = response.data.data.floorName
+                    this.hotGoods = response.data.data.hotGoods
                 }
             })
             .catch((error)=>{
@@ -203,5 +218,11 @@
     }
     .floor-rule div:nth-child(odd){
         border-right: 1px solid #ddd;
+    }
+    .hot-area{
+        text-align: center;
+        font-size:14px;
+        height: 1.8rem;
+        line-height:1.8rem;
     }
 </style>

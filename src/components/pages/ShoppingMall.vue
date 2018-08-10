@@ -61,7 +61,7 @@
                 <van-list>
                     <van-row gutter="20">
                         <van-col span="12" v-for="(item, index) in hotGoods" :key="index">
-                            <div>{{item.name}}</div>
+                            <goods-info :goodsImage="item.image" :goodsName="item.name" :goodsPrice="item.price"></goods-info>
                         </van-col>
                     </van-row>
                 </van-list>
@@ -78,6 +78,8 @@
     import 'swiper/dist/css/swiper.css'
     import {swiper , swiperSlide} from 'vue-awesome-swiper'
     import floorComponent from '../component/floorComponent'
+    import {toMoney} from '@/filter/moneyFilter.js'
+    import goodsInfo from '../component/goodsInfoComponent'
     export default {
         data() {
             return {
@@ -96,7 +98,7 @@
                 hotGoods:[]
             }
         },
-        components:{swiper,swiperSlide,floorComponent},
+        components:{swiper,swiperSlide,floorComponent,goodsInfo},
         created() {
             axios({
                 url:'https://www.easy-mock.com/mock/5b693c0d8733b43c01e267dc/example/SmileVue',

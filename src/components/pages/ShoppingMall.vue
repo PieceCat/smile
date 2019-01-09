@@ -75,12 +75,14 @@
 
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import floorComponent from "../component/floorComponent";
+//此处@代表src目录 ，可以再/build/webpack.base.conf.js中配置
 import { toMoney } from "@/filter/moneyFilter.js";
 import goodsInfo from "../component/goodsInfoComponent";
+
 export default {
   data() {
     return {
@@ -101,11 +103,8 @@ export default {
   },
   components: { swiper, swiperSlide, floorComponent, goodsInfo },
   created() {
-    axios({
-      url:
-        "https://www.easy-mock.com/mock/5b693c0d8733b43c01e267dc/example/SmileVue",
-      method: "get"
-    })
+    this.axios
+    .get('SmileVue')
       .then(response => {
         console.log(response);
         if (response.status == 200) {

@@ -32,6 +32,7 @@
 <script>
 import axios from 'axios'
 const LOCALURL = "http://localhost:3000/"
+import { Toast } from 'vant'
 export default {
     data(){
         return{
@@ -44,16 +45,27 @@ export default {
             this.$router.go(-1)
         },
         axiosRegisterUser(){
-            this.axios
-            .post(LOCALURL+'user/register',{
-                username: this.username,
-                password: this.password
+            axios({
+                url: LOCALURL+'user/register',
+                method: 'post',
+                data:{
+                    userName:this.username,
+                    password:this.password 
+                }
             })
-            .then(response=>{
+            .then(response => {
                 console.log(response)
+                //如果返回code为200，代表注册成功，我们给用户作Toast提示
+                if(response.data.code == 200){
+                    Toast.success('注册成功')
+                }else{
+                    console.log(response.data.message)
+                    Toast.fail('注册失败')
+                }
+                    console.log(response.data.code)
             })
-            .catch((error)=>{
-                console.log(error)
+            .catch((error) => {   
+                Toast.fail('注册失败')  
             })
         }
     }
